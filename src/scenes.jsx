@@ -119,7 +119,7 @@ export function Checklist() {
           transition={{ delay: 0.15 }}>
           If tongues has been part of your own walk with God, this section isn’t aimed at you.
           These are simply the six guidelines Paul himself gave for the gift — written down so the
-          church could enjoy it in peace. Lay them beside what you’ve seen, gently, one at a time.
+          church could enjoy it in peace. Read them slowly, and set them beside what you’ve seen.
         </motion.p>
         <div className="check-list">
           {RULES.map((r, i) => (
@@ -144,7 +144,7 @@ export function Checklist() {
         <motion.p className="check-verdict serif" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
           viewport={{ once: true }} transition={{ delay: 0.4, duration: 0.9 }}>
           “God is not the author of confusion but of peace.” — 1 Corinthians 14:33.
-          Weighing these things is not doubt — it is how Scripture itself invites us to honor the Giver.
+          Weighing these things is not doubt. It is what Scripture itself asks of all of us.
         </motion.p>
       </div>
     </section>
