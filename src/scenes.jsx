@@ -282,3 +282,48 @@ export function FlipCards() {
     </div>
   )
 }
+
+
+/* =============== go deeper resources =============== */
+const RESOURCES = [
+  { name: 'John MacArthur — “Speaking in Tongues”', url: 'https://www.gty.org/sermons/90-61/speaking-in-tongues',
+    note: 'The Grace to You sermon that sharpened several chapters of this book. An hour well spent.' },
+  { name: 'What Do Seventh-day Adventists Believe?', url: 'https://whatdoadventistsbelieve.com',
+    note: 'Our companion video series walking through the Bible’s core teachings, one belief at a time.' },
+  { name: 'Amazing Facts', url: 'https://www.amazingfacts.org',
+    note: 'Bible study guides, sermons, and prophecy resources.' },
+  { name: 'It Is Written', url: 'https://itiswritten.com',
+    note: 'Bible-centered media ministry — study series and daily devotionals.' },
+  { name: '3ABN', url: 'https://3abn.org',
+    note: 'Around-the-clock Bible teaching, health, and family programming.' },
+]
+
+export function Resources() {
+  return (
+    <section className="res-sec" id="resources">
+      <div className="wrap">
+        <motion.div className="kicker" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>Go Deeper</motion.div>
+        <motion.h2 className="display h2" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.7 }}>
+          STUDY <span className="accent">FURTHER</span>
+        </motion.h2>
+        <motion.p className="lede" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
+          The book ends with a full source list. These are good places to keep going.
+        </motion.p>
+        <div className="res-list">
+          {RESOURCES.map((r, i) => (
+            <motion.a className="res-row" key={r.url} href={r.url} target="_blank" rel="noopener"
+              initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }} transition={{ duration: 0.5, delay: (i % 5) * 0.07 }}>
+              <div>
+                <div className="res-name">{r.name}</div>
+                <div className="res-note">{r.note}</div>
+              </div>
+              <span className="res-arrow">↗</span>
+            </motion.a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}

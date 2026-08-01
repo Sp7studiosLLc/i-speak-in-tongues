@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion'
 import { useLenis, Preloader, Cursor, Magnetic, Grain, ScrollProgress, SplitH2, CountUp, Strike, fine } from './fx.jsx'
-import { BabelScene, HTimeline, Checklist, Claims, FlipCards, Experience } from './scenes.jsx'
+import { BabelScene, HTimeline, Checklist, Claims, FlipCards, Experience, Resources } from './scenes.jsx'
 
 const PDF = '/downloads/I_Speak_In_Tongues.pdf'
 
@@ -363,6 +363,7 @@ export default function App() {
       <Claims />
       <Chapters />
       <Download />
+      <Resources />
       <Author />
       <Footer />
     </>

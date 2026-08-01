@@ -375,3 +375,16 @@ footer .heb { margin-top: 18px; color: rgba(178, 138, 78, 0.3); font-size: 15px;
 .exp-lead { font-size: 21px; font-style: italic; color: var(--cream); line-height: 1.6; margin-bottom: 20px; }
 .exp-body p { color: var(--ink-soft); font-size: 15.5px; margin-bottom: 18px; }
 .exp-cta { text-align: center; margin-top: 30px; }
+
+
+/* resources */
+.res-sec { background: var(--bg2); }
+.res-list { max-width: 760px; margin: 52px auto 0; }
+.res-row { display: flex; align-items: center; justify-content: space-between; gap: 22px;
+  padding: 20px 8px; border-bottom: 1px solid rgba(178, 138, 78, 0.16); text-decoration: none;
+  transition: background 0.2s; }
+.res-row:hover { background: rgba(201, 160, 85, 0.05); }
+.res-name { color: var(--cream); font-size: 16.5px; }
+.res-row:hover .res-name { color: var(--gold); }
+.res-note { color: var(--ink-soft); font-size: 13.5px; margin-top: 3px; }
+.res-arrow { color: var(--gold-dim); font-size: 20px; flex: 0 0 auto; }
