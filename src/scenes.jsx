@@ -110,15 +110,16 @@ export function Checklist() {
   return (
     <section className="check-sec" id="checklist">
       <div className="wrap">
-        <motion.div className="kicker" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>Paul’s Regulations</motion.div>
+        <motion.div className="kicker" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>Paul’s Pattern</motion.div>
         <motion.h2 className="display h2" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.7 }}>
-          THE MODERN PRACTICE, <span className="accent">TESTED</span>
+          HOW DOES TODAY <span className="accent">LINE UP?</span>
         </motion.h2>
         <motion.p className="lede" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
           transition={{ delay: 0.15 }}>
-          Six specific rules close 1 Corinthians 14. Set today’s common practice beside them, one at a
-          time, and see how much lines up.
+          If tongues has been part of your own walk with God, this section isn’t aimed at you.
+          These are simply the six guidelines Paul himself gave for the gift — written down so the
+          church could enjoy it in peace. Lay them beside what you’ve seen, gently, one at a time.
         </motion.p>
         <div className="check-list">
           {RULES.map((r, i) => (
@@ -130,20 +131,59 @@ export function Checklist() {
                 <div className="rule">{r.rule}</div>
                 <div className="ref">{r.ref}</div>
               </div>
-              <motion.div className="stamp display"
-                initial={{ opacity: 0, scale: 2.6, rotate: 6 }}
-                whileInView={{ opacity: 1, scale: 1, rotate: -8 }}
+              <motion.div className="stamp soft display"
+                initial={{ opacity: 0, scale: 1.18, rotate: -2 }}
+                whileInView={{ opacity: 1, scale: 1, rotate: -3 }}
                 viewport={{ once: true, margin: '-60px' }}
-                transition={{ type: 'spring', stiffness: 320, damping: 17, delay: 0.35 + (i % 6) * 0.12 }}>
-                NOT MET
+                transition={{ duration: 0.55, delay: 0.3 + (i % 6) * 0.1, ease: [0.22, 1, 0.36, 1] }}>
+                CONSIDER
               </motion.div>
             </motion.div>
           ))}
         </div>
         <motion.p className="check-verdict serif" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
           viewport={{ once: true }} transition={{ delay: 0.4, duration: 0.9 }}>
-          “God is not the author of confusion but of peace.” — 1 Corinthians 14:33
+          “God is not the author of confusion but of peace.” — 1 Corinthians 14:33.
+          Weighing these things is not doubt — it is how Scripture itself invites us to honor the Giver.
         </motion.p>
+      </div>
+    </section>
+  )
+}
+
+/* =============== if this has been your experience =============== */
+export function Experience() {
+  return (
+    <section className="exp-sec" id="experience">
+      <div className="wrap">
+        <motion.div className="kicker" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>If This Has Been Your Experience</motion.div>
+        <motion.h2 className="display h2" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.7 }}>
+          WHAT YOU FELT <span className="accent">WAS REAL</span>
+        </motion.h2>
+        <motion.div className="exp-body" initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-70px' }} transition={{ duration: 0.8, delay: 0.15 }}>
+          <p className="serif exp-lead">
+            Maybe you went forward at a service. Hands were laid on you. You felt warmth, release,
+            tears you couldn’t explain — and you concluded, reasonably, that you had met God.
+          </p>
+          <p>
+            Nothing in this book questions your sincerity, and nothing here says your experience was
+            fake. What you felt was real. The question the book asks is a gentler and more important
+            one: what was its source? The reality of an experience doesn’t settle where it came
+            from — which is why Scripture lovingly asks all of us, whatever our story, to test everything
+            and hold fast what is good.
+          </p>
+          <p>
+            And here is the heart of it: God was not far from you that night. He is as near as He has
+            ever been — and what He actually offers is better than any moment on a platform: the renewing
+            of your mind, peace that guards the heart, His own Spirit known by truth and a changed life.
+            Nothing real about God is ever lost by letting go of what was never Him.
+          </p>
+          <div className="exp-cta">
+            <a className="btn ghost" href="/downloads/I_Speak_In_Tongues.pdf" download>Chapter 13 was written for you</a>
+          </div>
+        </motion.div>
       </div>
     </section>
   )

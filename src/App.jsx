@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion'
 import { useLenis, Preloader, Cursor, Magnetic, Grain, ScrollProgress, SplitH2, CountUp, Strike, fine } from './fx.jsx'
-import { BabelScene, HTimeline, Checklist, Claims, FlipCards } from './scenes.jsx'
+import { BabelScene, HTimeline, Checklist, Claims, FlipCards, Experience } from './scenes.jsx'
 
 const PDF = '/downloads/I_Speak_In_Tongues.pdf'
 
@@ -284,7 +284,7 @@ function Download() {
           </Reveal>
           <Reveal className="stats" delay={3}>
             <div className="stat"><div className="n"><CountUp to={19} /></div><div className="l">Chapters</div></div>
-            <div className="stat"><div className="n"><CountUp to={76} /></div><div className="l">Pages</div></div>
+            <div className="stat"><div className="n"><CountUp to={75} /></div><div className="l">Pages</div></div>
             <div className="stat"><div className="n"><CountUp to={200} suffix="+" /></div><div className="l">Scriptures</div></div>
             <div className="stat"><div className="n">$0</div><div className="l">Forever</div></div>
           </Reveal>
@@ -359,6 +359,7 @@ export default function App() {
             lede="Eighteen largely silent centuries — then something new. Scroll on." />
         : <VTimeline />}
       <Checklist />
+      <Experience />
       <Claims />
       <Chapters />
       <Download />
