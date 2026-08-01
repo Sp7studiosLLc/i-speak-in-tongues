@@ -1,5 +1,7 @@
-import React, { useRef } from 'react'
-import { motion, useScroll, useTransform, useInView } from 'framer-motion'
+import React, { useEffect, useRef, useState } from 'react'
+import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion'
+import { useLenis, Preloader, Cursor, Magnetic, Grain, ScrollProgress, SplitH2, CountUp, Strike, fine } from './fx.jsx'
+import { BabelScene, HTimeline, Checklist, Claims, FlipCards } from './scenes.jsx'
 
 const PDF = '/downloads/I_Speak_In_Tongues.pdf'
 
@@ -25,49 +27,33 @@ const fadeUp = {
   show: (i = 0) => ({ opacity: 1, y: 0, transition: { duration: 0.7, delay: i * 0.09, ease: [0.22, 1, 0.36, 1] } }),
 }
 
-function Reveal({ children, className, style, delay = 0, as = 'div' }) {
-  const Tag = motion[as] || motion.div
+function Reveal({ children, className, style, delay = 0 }) {
   return (
-    <Tag className={className} style={style} variants={fadeUp} custom={delay}
+    <motion.div className={className} style={style} variants={fadeUp} custom={delay}
       initial="hidden" whileInView="show" viewport={{ once: true, margin: '-80px' }}>
       {children}
-    </Tag>
+    </motion.div>
   )
+}
+
+const seq = (delay, y = 24) => ({
+  hidden: { opacity: 0, y },
+  show: { opacity: 1, y: 0, transition: { duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] } },
+})
+
+function useMedia(query) {
+  const [m, setM] = useState(() => typeof window !== 'undefined' && window.matchMedia(query).matches)
+  useEffect(() => {
+    const mq = window.matchMedia(query)
+    const fn = e => setM(e.matches)
+    mq.addEventListener('change', fn)
+    return () => mq.removeEventListener('change', fn)
+  }, [query])
+  return m
 }
 
 /* ---------------- hero ---------------- */
-function Strike() {
-  return (
-    <svg className="strike-svg" viewBox="0 0 1240 260" preserveAspectRatio="none" aria-hidden="true">
-      <defs>
-        <filter id="rough" x="-20%" y="-60%" width="140%" height="220%">
-          <feTurbulence type="fractalNoise" baseFrequency="0.032 0.13" numOctaves="4" seed="11" />
-          <feDisplacementMap in="SourceGraphic" scale="34" />
-        </filter>
-        <filter id="rough2" x="-20%" y="-60%" width="140%" height="220%">
-          <feTurbulence type="fractalNoise" baseFrequency="0.05 0.2" numOctaves="3" seed="47" />
-          <feDisplacementMap in="SourceGraphic" scale="46" />
-        </filter>
-      </defs>
-      <g filter="url(#rough)" transform="rotate(-4 620 130)">
-        <motion.path d="M 18,160 C 240,138 560,142 880,128 C 1030,121 1150,114 1222,108"
-          fill="none" stroke="#9f1a10" strokeWidth="64" strokeLinecap="round"
-          initial={{ pathLength: 0, opacity: 0 }}
-          animate={{ pathLength: 1, opacity: 0.93 }}
-          transition={{ duration: 0.9, delay: 1.15, ease: 'easeInOut' }} />
-      </g>
-      <g filter="url(#rough2)" transform="rotate(-4 620 130)">
-        <motion.path d="M 40,176 C 300,152 700,150 1210,118"
-          fill="none" stroke="#b7271a" strokeWidth="30" strokeLinecap="round"
-          initial={{ pathLength: 0, opacity: 0 }}
-          animate={{ pathLength: 1, opacity: 0.85 }}
-          transition={{ duration: 0.8, delay: 1.35, ease: 'easeInOut' }} />
-      </g>
-    </svg>
-  )
-}
-
-function Hero() {
+function Hero({ ready }) {
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
   const yHeb = useTransform(scrollYProgress, [0, 1], [0, -140])
@@ -77,44 +63,38 @@ function Hero() {
   return (
     <header className="hero" ref={ref} id="top">
       <motion.div className="heb-col heb-left hebrew" style={{ y: yHeb }}
-        initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 2, delay: 0.4 }}>
+        initial={{ opacity: 0 }} animate={ready ? { opacity: 1 } : {}} transition={{ duration: 2, delay: 0.3 }}>
         {HEB_LEFT.map((l, i) => <div key={i}>{l}</div>)}
       </motion.div>
       <motion.div className="heb-col heb-right hebrew" style={{ y: yHeb }}
-        initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 2, delay: 0.7 }}>
+        initial={{ opacity: 0 }} animate={ready ? { opacity: 1 } : {}} transition={{ duration: 2, delay: 0.55 }}>
         {HEB_RIGHT.map((l, i) => <div key={i}>{l}</div>)}
       </motion.div>
 
-      <motion.div style={{ y: yTitle, opacity: fade }}>
-        <motion.h1 className="display title"
-          initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}>
+      <motion.div style={{ y: yTitle, opacity: fade }} initial="hidden" animate={ready ? 'show' : 'hidden'}>
+        <motion.h1 className="display title" variants={seq(0.05, 40)}>
           I SPEAK<br />
-          <span style={{ whiteSpace: 'nowrap' }}>IN <span className="line2">TONGUES<Strike /></span></span>
+          <span style={{ whiteSpace: 'nowrap' }}>IN <span className="line2">TONGUES<Strike uid="hero" delay={0.95} /></span></span>
         </motion.h1>
 
-        <motion.div className="divider" initial={{ opacity: 0, scaleX: 0 }}
-          animate={{ opacity: 1, scaleX: 1 }} transition={{ duration: 0.8, delay: 1.7 }}>
+        <motion.div className="divider" variants={{ hidden: { opacity: 0, scaleX: 0 }, show: { opacity: 1, scaleX: 1, transition: { duration: 0.8, delay: 1.5 } } }}>
           <div className="ln" /><div className="di">◆</div><div className="ln" />
         </motion.div>
 
-        <motion.p className="serif subtitle" initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1.9 }}>
+        <motion.p className="serif subtitle" variants={seq(1.65)}>
           The Lie That Changed<br />Modern Christianity
         </motion.p>
 
-        <motion.p className="tagline" initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 2.3 }}>
+        <motion.p className="tagline" variants={seq(2.0, 0)}>
           A Biblical and Historical Investigation
         </motion.p>
 
-        <motion.div className="ctas" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 2.55 }}>
-          <a className="btn primary" href={PDF} download>Download the Book — Free</a>
-          <a className="btn ghost" href="#evidence">Explore the Evidence</a>
+        <motion.div className="ctas" variants={seq(2.2, 20)}>
+          <Magnetic><a className="btn primary" href={PDF} download>Download the Book — Free</a></Magnetic>
+          <Magnetic><a className="btn ghost" href="#babel">Explore the Evidence</a></Magnetic>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 2.9 }}>
+        <motion.div variants={seq(2.5, 0)}>
           <p className="byline">Shadai Perez</p>
           <p className="pub">Published by SP7 Studios</p>
         </motion.div>
@@ -161,7 +141,7 @@ function Evidence() {
       </div>
       <div className="wrap">
         <Reveal className="kicker">What Scripture Describes</Reveal>
-        <Reveal as="h2" className="display h2" delay={1}>SIX PILLARS OF <span className="accent">THE BIBLICAL GIFT</span></Reveal>
+        <SplitH2 text="SIX PILLARS OF" accent="THE BIBLICAL GIFT" />
         <Reveal className="lede" delay={2}>
           Walked in order — Babel, Pentecost, Caesarea, Ephesus, Corinth — the evidence yields one
           consistent portrait, and it looks nothing like the modern phenomenon that borrowed its name.
@@ -178,6 +158,8 @@ function Evidence() {
             </motion.div>
           ))}
         </div>
+        <Reveal className="kicker flips-kicker" delay={1}>The Two Words — Flip Them</Reveal>
+        <FlipCards />
       </div>
     </section>
   )
@@ -196,14 +178,14 @@ const TIMELINE = [
   { when: '1994–2008', what: 'Toronto. Brownsville. Lakeland. Manifestation-driven revivalism peaks — and collapses under its own fruit.', crisis: true },
 ]
 
-function Timeline() {
+function VTimeline() {
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start 0.8', 'end 0.6'] })
   return (
     <section className="timeline-sec" id="history">
       <div className="wrap">
         <Reveal className="kicker">Twenty Centuries</Reveal>
-        <Reveal as="h2" className="display h2" delay={1}>FROM PENTECOST <span className="accent">TO TOPEKA</span></Reveal>
+        <SplitH2 text="FROM PENTECOST" accent="TO TOPEKA" />
         <Reveal className="lede" delay={2}>
           If ecstatic tongues had always been normal Christian devotion, history would show it.
           Instead, the record shows eighteen silent centuries — and then a re-invention.
@@ -241,7 +223,7 @@ function Chapters() {
     <section id="inside">
       <div className="wrap">
         <Reveal className="kicker">Inside the Book</Reveal>
-        <Reveal as="h2" className="display h2" delay={1}>NINETEEN CHAPTERS. <span className="accent">EVERY ARGUMENT ANSWERED.</span></Reveal>
+        <SplitH2 text="NINETEEN CHAPTERS." accent="EVERY ARGUMENT ANSWERED." />
         <Reveal className="lede" delay={2}>
           The strongest objections are raised first and answered at full strength — plus a Scripture
           reference index, a timeline of the modern movement, and every source cited for verification.
@@ -259,33 +241,54 @@ function Chapters() {
   )
 }
 
+/* mouse-follow 3D cover */
+function TiltCover() {
+  const rx = useSpring(useMotionValue(0), { stiffness: 160, damping: 18 })
+  const ry = useSpring(useMotionValue(-8), { stiffness: 160, damping: 18 })
+  const gx = useSpring(useMotionValue(30), { stiffness: 120, damping: 20 })
+  const onMove = e => {
+    if (!fine()) return
+    const r = e.currentTarget.getBoundingClientRect()
+    const px = (e.clientX - r.left) / r.width - 0.5
+    const py = (e.clientY - r.top) / r.height - 0.5
+    ry.set(px * 16); rx.set(-py * 12); gx.set(20 + px * 120)
+  }
+  const onLeave = () => { rx.set(0); ry.set(-8); gx.set(30) }
+  const gloss = useTransform(gx, v => `linear-gradient(${105}deg, transparent ${v - 18}%, rgba(255,246,220,0.14) ${v}%, transparent ${v + 18}%)`)
+  return (
+    <motion.div className="cover-wrap" data-cursor="read"
+      initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-100px' }}
+      transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}>
+      <motion.a href={PDF} download className="cover-3d" onPointerMove={onMove} onPointerLeave={onLeave}
+        style={{ rotateX: rx, rotateY: ry, transformPerspective: 1100, display: 'block' }}>
+        <img className="cover-img" src="/cover.jpg" alt="I Speak in Tongues — book cover" />
+        <motion.div className="cover-gloss" style={{ backgroundImage: gloss }} />
+      </motion.a>
+    </motion.div>
+  )
+}
+
 function Download() {
   return (
     <section className="download-sec" id="download">
       <div className="wrap download-inner">
-        <motion.div className="cover-wrap"
-          initial={{ opacity: 0, y: 50, rotateY: -14 }}
-          whileInView={{ opacity: 1, y: 0, rotateY: -8 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          whileHover={{ rotateY: 0, scale: 1.03 }}>
-          <img className="cover-img" src="/cover.jpg" alt="I Speak in Tongues — book cover" />
-        </motion.div>
+        <TiltCover />
         <div className="dl-copy">
           <Reveal className="kicker" style={{ textAlign: 'inherit' }}>Read It Free</Reveal>
-          <Reveal as="h2" className="display h2" delay={1}>GET THE <span className="accent">BOOK</span></Reveal>
+          <SplitH2 text="GET THE" accent="BOOK" className="left" />
           <Reveal className="lede" delay={2}>
             The complete investigation — free to download, free to share. Bring every experience,
             however powerful, to the bar of Scripture.
           </Reveal>
           <Reveal className="stats" delay={3}>
-            <div className="stat"><div className="n">19</div><div className="l">Chapters</div></div>
-            <div className="stat"><div className="n">77</div><div className="l">Pages</div></div>
-            <div className="stat"><div className="n">200+</div><div className="l">Scriptures</div></div>
+            <div className="stat"><div className="n"><CountUp to={19} /></div><div className="l">Chapters</div></div>
+            <div className="stat"><div className="n"><CountUp to={77} /></div><div className="l">Pages</div></div>
+            <div className="stat"><div className="n"><CountUp to={200} suffix="+" /></div><div className="l">Scriptures</div></div>
             <div className="stat"><div className="n">$0</div><div className="l">Forever</div></div>
           </Reveal>
           <Reveal delay={4}>
-            <a className="btn primary" href={PDF} download>Download Free PDF</a>
+            <Magnetic><a className="btn primary" href={PDF} download>Download Free PDF</a></Magnetic>
             <p className="dl-note">PDF · 0.8 MB · formatted for reading and print · share it freely</p>
           </Reveal>
         </div>
@@ -301,11 +304,13 @@ function Author() {
         <Reveal className="kicker">The Author</Reveal>
         <Reveal className="display author-name" delay={1}>SHADAI PEREZ</Reveal>
         <Reveal className="role" delay={2}>SP7 Studios</Reveal>
-        <Reveal as="p" delay={3}>
-          Shadai Perez is a filmmaker and writer at SP7 Studios, an award-winning production studio.
-          This investigation grew out of years of study and firsthand experience with the questions it
-          examines — and out of the conviction that sincerity deserves the truth: test all things,
-          and hold fast what is good.
+        <Reveal delay={3}>
+          <p>
+            Shadai Perez is a filmmaker and writer at SP7 Studios, an award-winning production studio.
+            This investigation grew out of years of study and firsthand experience with the questions it
+            examines — and out of the conviction that sincerity deserves the truth: test all things,
+            and hold fast what is good.
+          </p>
         </Reveal>
       </div>
     </section>
@@ -324,22 +329,36 @@ function Footer() {
 }
 
 export default function App() {
+  useLenis()
+  const [ready, setReady] = useState(false)
+  const desktop = useMedia('(min-width: 900px)')
   return (
     <>
-      <motion.nav className="nav" initial={{ y: -70 }} animate={{ y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}>
+      <Preloader onDone={() => setReady(true)} />
+      <Cursor />
+      <Grain />
+      <ScrollProgress />
+      <motion.nav className="nav" initial={{ y: -70 }} animate={ready ? { y: 0 } : {}} transition={{ duration: 0.6, delay: 0.1 }}>
         <a className="mark display" href="#top">I SPEAK IN <s>TONGUES</s></a>
         <div className="links">
           <a href="#evidence">The Evidence</a>
           <a href="#history">History</a>
+          <a href="#claims">Claims</a>
           <a href="#inside">Inside</a>
           <a href="#author">Author</a>
-          <a className="dl" href={PDF} download>Free PDF</a>
+          <Magnetic><a className="dl" href={PDF} download>Free PDF</a></Magnetic>
         </div>
       </motion.nav>
-      <Hero />
+      <Hero ready={ready} />
       <Question />
+      <div id="babel"><BabelScene /></div>
       <Evidence />
-      <Timeline />
+      {desktop
+        ? <HTimeline items={TIMELINE} kicker="Twenty Centuries" title="FROM PENTECOST" accent="TO TOPEKA"
+            lede="Eighteen silent centuries — then a re-invention. Scroll on." />
+        : <VTimeline />}
+      <Checklist />
+      <Claims />
       <Chapters />
       <Download />
       <Author />
