@@ -127,9 +127,9 @@ const EVIDENCE = [
   { t: 'Babel, Reversed', p: 'At Babel one language became many and the nations scattered. At Pentecost many languages carried one message and the nations understood. The gift exists to cross the barrier God once imposed.', vf: 'Genesis 11 · Acts 2' },
   { t: 'Real Languages', p: 'The Greek glōssa means a language — and Luke swaps it freely with dialektos, “dialect.” Parthians, Medes, Elamites and a dozen nations heard unlearned Galileans speaking their birth languages.', vf: 'γλῶσσα · διάλεκτος — Acts 2:4–11', gk: true },
   { t: 'Publicly Verified', p: 'Pentecost was falsifiable: native speakers of at least a dozen languages confirmed in real time what was being said. Biblical tongues invited verification — and passed.', vf: '“We hear them… the wonderful works of God”' },
-  { t: 'The Rules of Order', p: 'Two or three at most. One at a time. Always interpreted. Silent without an interpreter. Under the speaker’s full control. Paul’s regulations read like a checklist the modern practice fails.', vf: '1 Corinthians 14:27–33, 40' },
+  { t: 'The Rules of Order', p: 'Two or three at most. One at a time. Always interpreted. Silent without an interpreter. Under the speaker’s full control. Paul’s regulations read like a checklist — and it is worth asking honestly how much of today’s practice fits it.', vf: '1 Corinthians 14:27–33, 40' },
   { t: 'A Sign for Unbelievers', p: 'Paul defines the purpose from Isaiah: tongues are a sign aimed at unbelievers — exactly as at Pentecost. A private devotional practice structurally cannot do the one thing the gift is for.', vf: 'Isaiah 28:11 · 1 Corinthians 14:21–22' },
-  { t: 'Born in 1901', p: 'The modern practice has a birthday and an address: January 1, 1901, Topeka, Kansas. Claimed as missionary languages, it failed on the mission field — and was redefined as a “heavenly language.”', vf: 'Documented in chapters 11–12' },
+  { t: 'Born in 1901', p: 'The modern practice has a birthday and an address: January 1, 1901, Topeka, Kansas. It was first taught as missionary languages; when that did not hold up on the mission field, it was re-described as a “heavenly language.”', vf: 'Documented in chapters 11–12' },
 ]
 
 function Evidence() {
@@ -144,7 +144,8 @@ function Evidence() {
         <SplitH2 text="SIX PILLARS OF" accent="THE BIBLICAL GIFT" />
         <Reveal className="lede" delay={2}>
           Walked in order — Babel, Pentecost, Caesarea, Ephesus, Corinth — the evidence yields one
-          consistent portrait, and it looks nothing like the modern phenomenon that borrowed its name.
+          consistent portrait, and it differs, point by point, from what most people today understand
+          tongues to be.
         </Reveal>
         <div className="cards">
           {EVIDENCE.map((c, i) => (
@@ -169,13 +170,13 @@ const TIMELINE = [
   { when: 'c. AD 31', what: 'Pentecost. The gift is given as real languages, publicly verified by pilgrims from fifteen regions.', crisis: false },
   { when: '2nd century', what: 'Montanism’s ecstatic prophecy is rejected by the church — in part because its frenzy contradicted 1 Corinthians 14.', crisis: false },
   { when: '4th–5th centuries', what: 'Chrysostom and Augustine testify plainly that the gift had ceased in their era.', crisis: false },
-  { when: '1801', what: 'Cane Ridge, Kentucky: mass falling, jerking, barking — revival phenomena with no biblical precedent.', crisis: true },
-  { when: '1880s', what: 'Maria Woodworth-Etter makes trance and falling a platform practice. The lineage runs straight to modern television healers.', crisis: true },
+  { when: '1801', what: 'Cane Ridge, Kentucky: mass falling, jerking, barking — revival phenomena with no clear biblical precedent.', crisis: true },
+  { when: '1880s', what: 'Maria Woodworth-Etter makes trance and falling a platform practice. The same pattern carries forward into modern television healing ministry.', crisis: true },
   { when: 'Jan 1, 1901', what: 'Topeka, Kansas. Agnes Ozman speaks in “tongues” at Parham’s Bethel Bible School. The modern movement is born — as claimed missionary languages.', crisis: true },
-  { when: '1901–1910', what: 'Missionaries reach India, China, and Japan — and no one understands a word. Tongues is quietly redefined as a “heavenly language.”', crisis: true },
+  { when: '1901–1910', what: 'Missionaries reach India, China, and Japan — and are not understood. Over the following years tongues is re-described as a “heavenly language.”', crisis: true },
   { when: '1906', what: 'Azusa Street, Los Angeles. Global Pentecostalism launches.', crisis: true },
   { when: '1960–1980s', what: 'The Charismatic renewal and “Third Wave” carry the practice into nearly every denomination.', crisis: true },
-  { when: '1994–2008', what: 'Toronto. Brownsville. Lakeland. Manifestation-driven revivalism peaks — and collapses under its own fruit.', crisis: true },
+  { when: '1994–2008', what: 'Toronto. Brownsville. Lakeland. Manifestation-driven revivalism peaks — and each movement ends in controversy and decline.', crisis: true },
 ]
 
 function VTimeline() {
@@ -188,7 +189,7 @@ function VTimeline() {
         <SplitH2 text="FROM PENTECOST" accent="TO TOPEKA" />
         <Reveal className="lede" delay={2}>
           If ecstatic tongues had always been normal Christian devotion, history would show it.
-          Instead, the record shows eighteen silent centuries — and then a re-invention.
+          Instead, the record is largely silent for eighteen centuries — and then something new appears.
         </Reveal>
         <div className="timeline" ref={ref}>
           <motion.div className="tl-line" style={{ scaleY: scrollYProgress }} />
@@ -355,7 +356,7 @@ export default function App() {
       <Evidence />
       {desktop
         ? <HTimeline items={TIMELINE} kicker="Twenty Centuries" title="FROM PENTECOST" accent="TO TOPEKA"
-            lede="Eighteen silent centuries — then a re-invention. Scroll on." />
+            lede="Eighteen largely silent centuries — then something new. Scroll on." />
         : <VTimeline />}
       <Checklist />
       <Claims />

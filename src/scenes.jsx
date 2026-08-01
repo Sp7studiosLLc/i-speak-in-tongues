@@ -87,7 +87,7 @@ export function HTimeline({ items, kicker, title, accent, lede }) {
               <p>{t.what}</p>
             </div>
           ))}
-          <div className="ht-endcap serif">…all downstream of Topeka, 1901.</div>
+          <div className="ht-endcap serif">…all tracing back to Topeka, 1901.</div>
         </motion.div>
         <div className="ht-rail"><motion.div className="ht-rail-fill" style={{ scaleX: p }} /></div>
         <div className="ht-hint">Keep scrolling ↓</div>
@@ -117,7 +117,8 @@ export function Checklist() {
         </motion.h2>
         <motion.p className="lede" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
           transition={{ delay: 0.15 }}>
-          Six enforceable rules close 1 Corinthians 14. Hold today’s mass practice against them, one at a time.
+          Six specific rules close 1 Corinthians 14. Set today’s common practice beside them, one at a
+          time, and see how much lines up.
         </motion.p>
         <div className="check-list">
           {RULES.map((r, i) => (
@@ -134,7 +135,7 @@ export function Checklist() {
                 whileInView={{ opacity: 1, scale: 1, rotate: -8 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ type: 'spring', stiffness: 320, damping: 17, delay: 0.35 + (i % 6) * 0.12 }}>
-                FAILED
+                NOT MET
               </motion.div>
             </motion.div>
           ))}
@@ -150,18 +151,18 @@ export function Checklist() {
 
 /* =============== the twelve claims accordion =============== */
 const CLAIMS = [
-  { q: '“The word tongue just means language.”', a: 'Agreed — completely. And the concession is fatal to everything built on it: a “prayer language” with no vocabulary, no grammar, and no meaning is not a language by their own definition. The first thirty seconds refutes the rest.' },
-  { q: '“There are three types of tongues — proof, prophetic, and private.”', a: 'Scripture never divides the gift. “Proof tongues” is the biblical gift; “prophetic tongues” (message plus interpretation) is also the biblical gift. Only “private tongues” is new — and it is precisely the one type with no example, description, or instruction anywhere in the Bible.' },
-  { q: '“1 Corinthians 14:14 proves it — my mind is unfruitful.”', a: 'Read one more verse. Verse 14 is Paul’s diagnosis of a problem; verse 15 is his stated resolution: “I will pray with the spirit, and I will also pray with the understanding.” Nobody needs scissors — they need to keep reading.' },
-  { q: '“Paul spoke in tongues more than anyone — so he did it in private.”', a: 'The prayer closet appears nowhere in the text; the interpreter supplies it. There is a far more obvious place the church’s greatest cross-cultural missionary used real languages: the mission field.' },
+  { q: '“The word tongue just means language.”', a: 'Agreed — completely. And that agreement carries a great deal with it: a “prayer language” with no vocabulary, no grammar, and no meaning would not be a language by that same definition. The first sentence sets the terms for everything after it.' },
+  { q: '“There are three types of tongues — proof, prophetic, and private.”', a: 'Scripture never divides the gift. “Proof tongues” is the biblical gift; “prophetic tongues” (message plus interpretation) is also the biblical gift. Only “private tongues” stands apart — it is the one category with no example, description, or instruction anywhere in Scripture.' },
+  { q: '“1 Corinthians 14:14 proves it — my mind is unfruitful.”', a: 'Read one more verse. Verse 14 is Paul’s diagnosis of a problem; verse 15 is his stated resolution: “I will pray with the spirit, and I will also pray with the understanding.” The answer is already in the next verse.' },
+  { q: '“Paul spoke in tongues more than anyone — so he did it in private.”', a: 'The prayer closet appears nowhere in the text; it is read into it. There is a far more natural place the church’s greatest cross-cultural missionary used real languages: the mission field.' },
   { q: '“14:2 says tongues is prayer and praise to God.”', a: 'Context: a man speaks a language no one in the assembly knows. “No one understands him” is Paul’s complaint, not the design — only God understands, because God understands every language. Paul’s remedy follows immediately: interpret, or keep silent.' },
   { q: '“Romans 8:26 — groanings too deep for words.”', a: 'Those groanings are the Spirit’s, not ours — and they are unutterable: not spoken at all, by anyone. A verse about silent intercession cannot describe audible human syllables.' },
   { q: '“1 Corinthians 13:1 — the tongues of angels.”', a: 'It is a stack of deliberate hyperboles — all mysteries, all knowledge, all faith, mountains moved — to say even the maximum without love is nothing. And every time angels speak in Scripture, they speak the ordinary language of their hearers.' },
-  { q: '“A stranger said: you just spoke my tribe’s language.”', a: 'Taken at face value, the story testifies for the real-language definition — an audience, a language, a hearer — and against the private-language view. And “I couldn’t stop it” contradicts the teachers’ own safeguard: “the spirits of the prophets are subject to the prophets.”' },
-  { q: '“Do not forbid speaking in tongues — it’s literally a verse.”', a: 'Amen — read whole: “do not forbid… let all things be done decently and in order.” Paul forbids forbidding the genuine gift as the chapter defines it: real language, two or three, in turn, interpreted, in order. Declining a practice that fails every test is obeying the verse.' },
-  { q: '“We’re charismatic with a seat belt — order in public, liberty in private.”', a: 'Look at what the seat belt does: it applies every test only where others could evaluate, and exempts the private version from all testing forever. A practice engineered to be untestable is not a safeguard — it is the removal of every safeguard.' },
-  { q: '“Cessationism is flimsy — and abuse doesn’t negate right use.”', a: 'The question is not when tongues ceased but what tongues is. Even a full continuationist should reject the modern practice, because it matches the biblical description on no point: not language, not interpreted, not orderly, not aimed at unbelievers.' },
-  { q: '“I begged God for months — then a dream gave me the syllables.”', a: 'In Acts the gift falls unsought, instantly, fully formed, as verified language. Months of seeking, a flight to a specialist, and a delayed onset through a dream is the biography of an acquired practice — not the pattern of Acts.' },
+  { q: '“A stranger said: you just spoke my tribe’s language.”', a: 'Taken at face value, the story testifies for the real-language definition — an audience, a language, a hearer — and against the private-language view. And “I couldn’t stop it” sits uneasily with the safeguard those same teachers cite: “the spirits of the prophets are subject to the prophets.”' },
+  { q: '“Do not forbid speaking in tongues — it’s literally a verse.”', a: 'Amen — read whole: “do not forbid… let all things be done decently and in order.” Paul forbids forbidding the genuine gift as the chapter defines it: real language, two or three, in turn, interpreted, in order. Setting aside a practice that doesn’t meet those conditions isn’t disobeying the verse — it’s following it.' },
+  { q: '“We’re charismatic with a seat belt — order in public, liberty in private.”', a: 'Look at what the seat belt does: it applies every test only where others could evaluate, and exempts the private version from testing altogether. A practice placed beyond testing isn’t safeguarded — it’s simply untested.' },
+  { q: '“Cessationism is flimsy — and abuse doesn’t negate right use.”', a: 'The question is not when tongues ceased but what tongues is. Even a full continuationist should reject the modern practice, because it lines up with the biblical description at very few points: not identifiable language, rarely interpreted, often not orderly, and not aimed at unbelievers.' },
+  { q: '“I begged God for months — then a dream gave me the syllables.”', a: 'In Acts the gift falls unsought, instantly, fully formed, as verified language. Months of seeking, a flight to a specialist, and a delayed onset through a dream looks much more like something learned over time than like the pattern in Acts.' },
 ]
 
 export function Claims() {
