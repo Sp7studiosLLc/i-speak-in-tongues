@@ -291,6 +291,8 @@ function Download() {
           <Reveal delay={4}>
             <Magnetic><a className="btn primary" href={PDF} download>Download Free PDF</a></Magnetic>
             <p className="dl-note">PDF · 0.8 MB · formatted for reading and print · share it freely</p>
+            <p className="dl-note"><a className="dl-alt" href="/downloads/I_Speak_In_Tongues_Audio_Edition.pdf" download>
+              Audio edition (PDF) — formatted for text-to-speech and dictation apps</a></p>
           </Reveal>
         </div>
       </div>

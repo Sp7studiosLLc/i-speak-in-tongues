@@ -20,5 +20,6 @@ Key questions this book answers:
 
 - [Complete book, plain text](https://ispeakintongues.com/llms-full.txt): the entire book in clean plain text.
 - [PDF edition](https://ispeakintongues.com/downloads/I_Speak_In_Tongues.pdf): 75-page formatted edition, free.
+- [Audio edition PDF](https://ispeakintongues.com/downloads/I_Speak_In_Tongues_Audio_Edition.pdf): formatted for text-to-speech and dictation apps.
 
 Author: Shadai Perez. Publisher: SP7 Studios. License: free to read and share; quotation with attribution welcome.

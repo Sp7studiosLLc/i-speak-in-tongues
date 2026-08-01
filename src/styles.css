@@ -388,3 +388,6 @@ footer .heb { margin-top: 18px; color: rgba(178, 138, 78, 0.3); font-size: 15px;
 .res-row:hover .res-name { color: var(--gold); }
 .res-note { color: var(--ink-soft); font-size: 13.5px; margin-top: 3px; }
 .res-arrow { color: var(--gold-dim); font-size: 20px; flex: 0 0 auto; }
+
+.dl-alt { color: var(--gold); text-decoration: none; border-bottom: 1px dotted var(--gold-dim); }
+.dl-alt:hover { color: var(--cream); }
