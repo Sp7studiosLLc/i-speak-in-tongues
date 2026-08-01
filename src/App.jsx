@@ -283,7 +283,7 @@ function Download() {
           </Reveal>
           <Reveal className="stats" delay={3}>
             <div className="stat"><div className="n"><CountUp to={19} /></div><div className="l">Chapters</div></div>
-            <div className="stat"><div className="n"><CountUp to={77} /></div><div className="l">Pages</div></div>
+            <div className="stat"><div className="n"><CountUp to={76} /></div><div className="l">Pages</div></div>
             <div className="stat"><div className="n"><CountUp to={200} suffix="+" /></div><div className="l">Scriptures</div></div>
             <div className="stat"><div className="n">$0</div><div className="l">Forever</div></div>
           </Reveal>
