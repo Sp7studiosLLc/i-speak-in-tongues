@@ -37,19 +37,19 @@ export function BabelScene() {
           <motion.div className="bp-label" style={{ opacity: babelOp }}>
             <div className="kicker">Genesis 11</div>
             <div className="display bp-name">BABEL</div>
-            <div className="bp-sub serif">One language became many — and the nations scattered.</div>
+            <div className="bp-sub serif">One language became many, and the nations scattered.</div>
           </motion.div>
           <motion.div className="bp-label" style={{ opacity: pentOp }}>
             <div className="kicker">Acts 2</div>
             <div className="display bp-name gold">PENTECOST</div>
-            <div className="bp-sub serif">Many languages carried one message — and the nations understood.</div>
+            <div className="bp-sub serif">Many languages carried one message, and the nations understood.</div>
           </motion.div>
         </div>
         <div className="bp-verse hebrew" dir="rtl">
           {VERSE.map((w, i) => <ScatterWord key={i} p={p} i={i} word={w} />)}
         </div>
         <motion.div className="bp-caption serif" style={{ opacity: capOp, y: capY }}>
-          “…and they were all filled with the Holy Spirit and began to speak with other tongues.” — Acts 2:4
+          “…and they were all filled with the Holy Spirit and began to speak with other tongues.” (Acts 2:4)
         </motion.div>
       </div>
     </section>
@@ -98,9 +98,9 @@ export function HTimeline({ items, kicker, title, accent, lede }) {
 
 /* =============== the 1 Corinthians 14 checklist =============== */
 const RULES = [
-  { rule: 'Two or three speakers — at the most', ref: '1 Cor 14:27' },
-  { rule: 'Each in turn — never all at once', ref: '1 Cor 14:27' },
-  { rule: 'Let one interpret — every time', ref: '1 Cor 14:27' },
+  { rule: 'Two or three speakers, at the most', ref: '1 Cor 14:27' },
+  { rule: 'Each in turn, never all at once', ref: '1 Cor 14:27' },
+  { rule: 'Let one interpret, every time', ref: '1 Cor 14:27' },
   { rule: 'No interpreter? Keep silent in church', ref: '1 Cor 14:28' },
   { rule: 'The speaker remains in full control', ref: '1 Cor 14:32' },
   { rule: 'All things done decently and in order', ref: '1 Cor 14:40' },
@@ -118,7 +118,7 @@ export function Checklist() {
         <motion.p className="lede" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
           transition={{ delay: 0.15 }}>
           If tongues has been part of your own walk with God, this section isn’t aimed at you.
-          These are simply the six guidelines Paul himself gave for the gift — written down so the
+          These are simply the six guidelines Paul himself gave for the gift, written down so the
           church could enjoy it in peace. Read them slowly, and set them beside what you’ve seen.
         </motion.p>
         <div className="check-list">
@@ -143,7 +143,7 @@ export function Checklist() {
         </div>
         <motion.p className="check-verdict serif" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
           viewport={{ once: true }} transition={{ delay: 0.4, duration: 0.9 }}>
-          “God is not the author of confusion but of peace.” — 1 Corinthians 14:33.
+          “God is not the author of confusion but of peace” (1 Corinthians 14:33).
           Weighing these things is not doubt. It is what Scripture itself asks of all of us.
         </motion.p>
       </div>
@@ -165,18 +165,18 @@ export function Experience() {
           viewport={{ once: true, margin: '-70px' }} transition={{ duration: 0.8, delay: 0.15 }}>
           <p className="serif exp-lead">
             Maybe you went forward at a service. Hands were laid on you. You felt warmth, release,
-            tears you couldn’t explain — and you concluded, reasonably, that you had met God.
+            tears you couldn’t explain, and you concluded, reasonably, that you had met God.
           </p>
           <p>
             Nothing in this book questions your sincerity, and nothing here says your experience was
             fake. What you felt was real. The question the book asks is a gentler and more important
             one: what was its source? The reality of an experience doesn’t settle where it came
-            from — which is why Scripture lovingly asks all of us, whatever our story, to test everything
+            from, which is why Scripture lovingly asks all of us, whatever our story, to test everything
             and hold fast what is good.
           </p>
           <p>
             And here is the heart of it: God was not far from you that night. He is as near as He has
-            ever been — and what He actually offers is better than any moment on a platform: the renewing
+            ever been, and what He actually offers is better than any moment on a platform: the renewing
             of your mind, peace that guards the heart, His own Spirit known by truth and a changed life.
             Nothing real about God is ever lost by letting go of what was never Him.
           </p>
@@ -191,18 +191,18 @@ export function Experience() {
 
 /* =============== the twelve claims accordion =============== */
 const CLAIMS = [
-  { q: '“The word tongue just means language.”', a: 'Agreed — completely. And that agreement carries a great deal with it: a “prayer language” with no vocabulary, no grammar, and no meaning would not be a language by that same definition. The first sentence sets the terms for everything after it.' },
-  { q: '“There are three types of tongues — proof, prophetic, and private.”', a: 'Scripture never divides the gift. “Proof tongues” is the biblical gift; “prophetic tongues” (message plus interpretation) is also the biblical gift. Only “private tongues” stands apart — it is the one category with no example, description, or instruction anywhere in Scripture.' },
-  { q: '“1 Corinthians 14:14 proves it — my mind is unfruitful.”', a: 'Read one more verse. Verse 14 is Paul’s diagnosis of a problem; verse 15 is his stated resolution: “I will pray with the spirit, and I will also pray with the understanding.” The answer is already in the next verse.' },
-  { q: '“Paul spoke in tongues more than anyone — so he did it in private.”', a: 'The prayer closet appears nowhere in the text; it is read into it. There is a far more natural place the church’s greatest cross-cultural missionary used real languages: the mission field.' },
-  { q: '“14:2 says tongues is prayer and praise to God.”', a: 'Context: a man speaks a language no one in the assembly knows. “No one understands him” is Paul’s complaint, not the design — only God understands, because God understands every language. Paul’s remedy follows immediately: interpret, or keep silent.' },
-  { q: '“Romans 8:26 — groanings too deep for words.”', a: 'Those groanings are the Spirit’s, not ours — and they are unutterable: not spoken at all, by anyone. A verse about silent intercession cannot describe audible human syllables.' },
-  { q: '“1 Corinthians 13:1 — the tongues of angels.”', a: 'It is a stack of deliberate hyperboles — all mysteries, all knowledge, all faith, mountains moved — to say even the maximum without love is nothing. And every time angels speak in Scripture, they speak the ordinary language of their hearers.' },
-  { q: '“A stranger said: you just spoke my tribe’s language.”', a: 'Taken at face value, the story testifies for the real-language definition — an audience, a language, a hearer — and against the private-language view. And “I couldn’t stop it” sits uneasily with the safeguard those same teachers cite: “the spirits of the prophets are subject to the prophets.”' },
-  { q: '“Do not forbid speaking in tongues — it’s literally a verse.”', a: 'Amen — read whole: “do not forbid… let all things be done decently and in order.” Paul forbids forbidding the genuine gift as the chapter defines it: real language, two or three, in turn, interpreted, in order. Setting aside a practice that doesn’t meet those conditions isn’t disobeying the verse — it’s following it.' },
-  { q: '“We’re charismatic with a seat belt — order in public, liberty in private.”', a: 'Look at what the seat belt does: it applies every test only where others could evaluate, and exempts the private version from testing altogether. A practice placed beyond testing isn’t safeguarded — it’s simply untested.' },
-  { q: '“Cessationism is flimsy — and abuse doesn’t negate right use.”', a: 'The question is not when tongues ceased but what tongues is. Even a full continuationist should reject the modern practice, because it lines up with the biblical description at very few points: not identifiable language, rarely interpreted, often not orderly, and not aimed at unbelievers.' },
-  { q: '“I begged God for months — then a dream gave me the syllables.”', a: 'In Acts the gift falls unsought, instantly, fully formed, as verified language. Months of seeking, a flight to a specialist, and a delayed onset through a dream looks much more like something learned over time than like the pattern in Acts.' },
+  { q: '“The word tongue just means language.”', a: 'Agreed, completely. And that agreement carries a great deal with it: a “prayer language” with no vocabulary, no grammar, and no meaning would not be a language by that same definition. The first sentence sets the terms for everything after it.' },
+  { q: '“There are three types of tongues: proof, prophetic, and private.”', a: 'Scripture never divides the gift. “Proof tongues” is the biblical gift; “prophetic tongues” (message plus interpretation) is also the biblical gift. Only “private tongues” stands apart; it is the one category with no example, description, or instruction anywhere in Scripture.' },
+  { q: '“1 Corinthians 14:14 proves it: my mind is unfruitful.”', a: 'Read one more verse. Verse 14 is Paul’s diagnosis of a problem; verse 15 is his stated resolution: “I will pray with the spirit, and I will also pray with the understanding.” The answer is already in the next verse.' },
+  { q: '“Paul spoke in tongues more than anyone, so he did it in private.”', a: 'The prayer closet appears nowhere in the text; it is read into it. There is a far more natural place the church’s greatest cross-cultural missionary used real languages: the mission field.' },
+  { q: '“14:2 says tongues is prayer and praise to God.”', a: 'Context: a man speaks a language no one in the assembly knows. “No one understands him” is Paul’s complaint, not the design. Only God understands, because God understands every language. Paul’s remedy follows immediately: interpret, or keep silent.' },
+  { q: '“Romans 8:26: groanings too deep for words.”', a: 'Those groanings are the Spirit’s, not ours, and they are unutterable: not spoken at all, by anyone. A verse about silent intercession cannot describe audible human syllables.' },
+  { q: '“1 Corinthians 13:1: the tongues of angels.”', a: 'It is a stack of deliberate hyperboles (all mysteries, all knowledge, all faith, mountains moved) to say even the maximum without love is nothing. And every time angels speak in Scripture, they speak the ordinary language of their hearers.' },
+  { q: '“A stranger said: you just spoke my tribe’s language.”', a: 'Taken at face value, the story testifies for the real-language definition, with an audience, a language, and a hearer, and against the private-language view. And “I couldn’t stop it” sits uneasily with the safeguard those same teachers cite: “the spirits of the prophets are subject to the prophets.”' },
+  { q: '“Do not forbid speaking in tongues, it’s literally a verse.”', a: 'Amen, read whole: “do not forbid… let all things be done decently and in order.” Paul forbids forbidding the genuine gift as the chapter defines it: real language, two or three, in turn, interpreted, in order. Setting aside a practice that doesn’t meet those conditions isn’t disobeying the verse; it’s following it.' },
+  { q: '“We’re charismatic with a seat belt: order in public, liberty in private.”', a: 'Look at what the seat belt does: it applies every test only where others could evaluate, and exempts the private version from testing altogether. A practice placed beyond testing isn’t safeguarded; it’s simply untested.' },
+  { q: '“Cessationism is flimsy, and abuse doesn’t negate right use.”', a: 'The question is not when tongues ceased but what tongues is. Even a full continuationist should reject the modern practice, because it lines up with the biblical description at very few points: not identifiable language, rarely interpreted, often not orderly, and not aimed at unbelievers.' },
+  { q: '“I begged God for months, then a dream gave me the syllables.”', a: 'In Acts the gift falls unsought, instantly, fully formed, as verified language. Months of seeking, a flight to a specialist, and a delayed onset through a dream looks much more like something learned over time than like the pattern in Acts.' },
 ]
 
 export function Claims() {
@@ -216,7 +216,7 @@ export function Claims() {
           TWELVE CLAIMS. <span className="accent">TWELVE ANSWERS.</span>
         </motion.h2>
         <motion.p className="lede" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
-          The arguments as they actually circulate — each stated fairly, each answered from Scripture.
+          The arguments as they actually circulate, each stated fairly and each answered from Scripture.
           The full versions fill chapter 16.
         </motion.p>
         <div className="claims">
@@ -250,11 +250,11 @@ export function Claims() {
 const WORDS = [
   {
     gk: 'γλῶσσα', tr: 'glōssa', front: 'the word behind every “tongues”',
-    back: 'The tongue in the mouth — or a language: a structured system of human speech. Its only two meanings in Greek. Used in Acts 2:4 and throughout 1 Corinthians 12–14.',
+    back: 'The tongue in the mouth, or a language: a structured system of human speech. Its only two meanings in Greek. Used in Acts 2:4 and throughout 1 Corinthians 12–14.',
   },
   {
     gk: 'διάλεκτος', tr: 'dialektos', front: 'the word the crowd used',
-    back: '“Dialect” — a native language. “How is it that we hear, each in our own dialektos in which we were born?” (Acts 2:8). Luke swaps it freely with glōssa: same event, same meaning.',
+    back: '“Dialect”: a native language. “How is it that we hear, each in our own dialektos in which we were born?” (Acts 2:8). Luke swaps it freely with glōssa: same event, same meaning.',
   },
 ]
 
@@ -271,7 +271,7 @@ export function FlipCards() {
             <div className="flip-face flip-front">
               <div className="gk-big serif">{w.gk}</div>
               <div className="gk-tr">{w.tr}</div>
-              <div className="gk-hint">{w.front} — flip me</div>
+              <div className="gk-hint">{w.front} · flip me</div>
             </div>
             <div className="flip-face flip-back">
               <p>{w.back}</p>
@@ -286,14 +286,14 @@ export function FlipCards() {
 
 /* =============== go deeper resources =============== */
 const RESOURCES = [
-  { name: 'John MacArthur — “Speaking in Tongues”', url: 'https://www.gty.org/sermons/90-61/speaking-in-tongues',
+  { name: 'John MacArthur, “Speaking in Tongues”', url: 'https://www.gty.org/sermons/90-61/speaking-in-tongues',
     note: 'The Grace to You sermon that sharpened several chapters of this book. An hour well spent.' },
   { name: 'What Do Seventh-day Adventists Believe?', url: 'https://whatdoadventistsbelieve.com',
     note: 'Our companion video series walking through the Bible’s core teachings, one belief at a time.' },
   { name: 'Amazing Facts', url: 'https://www.amazingfacts.org',
     note: 'Bible study guides, sermons, and prophecy resources.' },
   { name: 'It Is Written', url: 'https://itiswritten.com',
-    note: 'Bible-centered media ministry — study series and daily devotionals.' },
+    note: 'Bible-centered media ministry with study series and daily devotionals.' },
   { name: '3ABN', url: 'https://3abn.org',
     note: 'Around-the-clock Bible teaching, health, and family programming.' },
 ]

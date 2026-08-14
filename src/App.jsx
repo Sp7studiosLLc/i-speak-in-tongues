@@ -90,7 +90,7 @@ function Hero({ ready }) {
         </motion.p>
 
         <motion.div className="ctas" variants={seq(2.2, 20)}>
-          <Magnetic><a className="btn primary" href={PDF} download>Download the Book — Free</a></Magnetic>
+          <Magnetic><a className="btn primary" href={PDF} download>Download the Free Book</a></Magnetic>
           <Magnetic><a className="btn ghost" href="#babel">Explore the Evidence</a></Magnetic>
         </motion.div>
 
@@ -114,7 +114,7 @@ function Question() {
         <Reveal className="kicker">The Question</Reveal>
         <Reveal className="bigquote serif" delay={1}>
           “Is the gift of tongues from God? <span className="gold">Is it what most people today
-          understand it to be?</span> The Bible itself commands us to test every spirit — that is
+          understand it to be?</span> The Bible itself commands us to test every spirit. That is
           what this book does.”
         </Reveal>
         <Reveal className="attrib" delay={2}>From the Introduction</Reveal>
@@ -125,10 +125,10 @@ function Question() {
 
 const EVIDENCE = [
   { t: 'Babel, Reversed', p: 'At Babel one language became many and the nations scattered. At Pentecost many languages carried one message and the nations understood. The gift exists to cross the barrier God once imposed.', vf: 'Genesis 11 · Acts 2' },
-  { t: 'Real Languages', p: 'The Greek glōssa means a language — and Luke swaps it freely with dialektos, “dialect.” Parthians, Medes, Elamites and a dozen nations heard unlearned Galileans speaking their birth languages.', vf: 'γλῶσσα · διάλεκτος — Acts 2:4–11', gk: true },
-  { t: 'Publicly Verified', p: 'Pentecost was falsifiable: native speakers of at least a dozen languages confirmed in real time what was being said. Biblical tongues invited verification — and passed.', vf: '“We hear them… the wonderful works of God”' },
-  { t: 'The Rules of Order', p: 'Two or three at most. One at a time. Always interpreted. Silent without an interpreter. Under the speaker’s full control. Paul’s regulations read like a checklist — and it is worth asking honestly how much of today’s practice fits it.', vf: '1 Corinthians 14:27–33, 40' },
-  { t: 'A Sign for Unbelievers', p: 'Paul defines the purpose from Isaiah: tongues are a sign aimed at unbelievers — exactly as at Pentecost. A private devotional practice structurally cannot do the one thing the gift is for.', vf: 'Isaiah 28:11 · 1 Corinthians 14:21–22' },
+  { t: 'Real Languages', p: 'The Greek glōssa means a language, and Luke swaps it freely with dialektos, “dialect.” Parthians, Medes, Elamites and a dozen nations heard unlearned Galileans speaking their birth languages.', vf: 'γλῶσσα · διάλεκτος · Acts 2:4–11', gk: true },
+  { t: 'Publicly Verified', p: 'Pentecost was falsifiable: native speakers of at least a dozen languages confirmed in real time what was being said. Biblical tongues invited verification, and passed.', vf: '“We hear them… the wonderful works of God”' },
+  { t: 'The Rules of Order', p: 'Two or three at most. One at a time. Always interpreted. Silent without an interpreter. Under the speaker’s full control. Paul’s regulations read like a checklist, and it is worth asking honestly how much of today’s practice fits it.', vf: '1 Corinthians 14:27–33, 40' },
+  { t: 'A Sign for Unbelievers', p: 'Paul defines the purpose from Isaiah: tongues are a sign aimed at unbelievers, exactly as at Pentecost. A private devotional practice structurally cannot do the one thing the gift is for.', vf: 'Isaiah 28:11 · 1 Corinthians 14:21–22' },
   { t: 'Born in 1901', p: 'The modern practice has a birthday and an address: January 1, 1901, Topeka, Kansas. It was first taught as missionary languages; when that did not hold up on the mission field, it was re-described as a “heavenly language.”', vf: 'Documented in chapters 11–12' },
 ]
 
@@ -143,7 +143,7 @@ function Evidence() {
         <Reveal className="kicker">What Scripture Describes</Reveal>
         <SplitH2 text="SIX PILLARS OF" accent="THE BIBLICAL GIFT" />
         <Reveal className="lede" delay={2}>
-          Walked in order — Babel, Pentecost, Caesarea, Ephesus, Corinth — the evidence yields one
+          Walked in order (Babel, Pentecost, Caesarea, Ephesus, Corinth), the evidence yields one
           consistent portrait, and it differs, point by point, from what most people today understand
           tongues to be.
         </Reveal>
@@ -159,7 +159,7 @@ function Evidence() {
             </motion.div>
           ))}
         </div>
-        <Reveal className="kicker flips-kicker" delay={1}>The Two Words — Flip Them</Reveal>
+        <Reveal className="kicker flips-kicker" delay={1}>The Two Words · Flip Them</Reveal>
         <FlipCards />
       </div>
     </section>
@@ -168,15 +168,15 @@ function Evidence() {
 
 const TIMELINE = [
   { when: 'c. AD 31', what: 'Pentecost. The gift is given as real languages, publicly verified by pilgrims from fifteen regions.', crisis: false },
-  { when: '2nd century', what: 'Montanism’s ecstatic prophecy is rejected by the church — in part because its frenzy contradicted 1 Corinthians 14.', crisis: false },
+  { when: '2nd century', what: 'Montanism’s ecstatic prophecy is rejected by the church, in part because its frenzy contradicted 1 Corinthians 14.', crisis: false },
   { when: '4th–5th centuries', what: 'Chrysostom and Augustine testify plainly that the gift had ceased in their era.', crisis: false },
-  { when: '1801', what: 'Cane Ridge, Kentucky: mass falling, jerking, barking — revival phenomena with no clear biblical precedent.', crisis: true },
+  { when: '1801', what: 'Cane Ridge, Kentucky: mass falling, jerking, barking: revival phenomena with no clear biblical precedent.', crisis: true },
   { when: '1880s', what: 'Maria Woodworth-Etter makes trance and falling a platform practice. The same pattern carries forward into modern television healing ministry.', crisis: true },
-  { when: 'Jan 1, 1901', what: 'Topeka, Kansas. Agnes Ozman speaks in “tongues” at Parham’s Bethel Bible School. The modern movement is born — as claimed missionary languages.', crisis: true },
-  { when: '1901–1910', what: 'Missionaries reach India, China, and Japan — and are not understood. Over the following years tongues is re-described as a “heavenly language.”', crisis: true },
+  { when: 'Jan 1, 1901', what: 'Topeka, Kansas. Agnes Ozman speaks in “tongues” at Parham’s Bethel Bible School. The modern movement is born, claimed at the time as missionary languages.', crisis: true },
+  { when: '1901–1910', what: 'Missionaries reach India, China, and Japan, and are not understood. Over the following years tongues is re-described as a “heavenly language.”', crisis: true },
   { when: '1906', what: 'Azusa Street, Los Angeles. Global Pentecostalism launches.', crisis: true },
   { when: '1960–1980s', what: 'The Charismatic renewal and “Third Wave” carry the practice into nearly every denomination.', crisis: true },
-  { when: '1994–2008', what: 'Toronto. Brownsville. Lakeland. Manifestation-driven revivalism peaks — and each movement ends in controversy and decline.', crisis: true },
+  { when: '1994–2008', what: 'Toronto. Brownsville. Lakeland. Manifestation-driven revivalism peaks, and each movement ends in controversy and decline.', crisis: true },
 ]
 
 function VTimeline() {
@@ -189,7 +189,7 @@ function VTimeline() {
         <SplitH2 text="FROM PENTECOST" accent="TO TOPEKA" />
         <Reveal className="lede" delay={2}>
           If ecstatic tongues had always been normal Christian devotion, history would show it.
-          Instead, the record is largely silent for eighteen centuries — and then something new appears.
+          Instead, the record is largely silent for eighteen centuries, and then something new appears.
         </Reveal>
         <div className="timeline" ref={ref}>
           <motion.div className="tl-line" style={{ scaleY: scrollYProgress }} />
@@ -226,7 +226,7 @@ function Chapters() {
         <Reveal className="kicker">Inside the Book</Reveal>
         <SplitH2 text="NINETEEN CHAPTERS." accent="EVERY ARGUMENT ANSWERED." />
         <Reveal className="lede" delay={2}>
-          The strongest objections are raised first and answered at full strength — plus a Scripture
+          The strongest objections are raised first and answered at full strength, plus a Scripture
           reference index, a timeline of the modern movement, and every source cited for verification.
         </Reveal>
         <div className="chapters">
@@ -263,7 +263,7 @@ function TiltCover() {
       transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}>
       <motion.a href={PDF} download className="cover-3d" onPointerMove={onMove} onPointerLeave={onLeave}
         style={{ rotateX: rx, rotateY: ry, transformPerspective: 1100, display: 'block' }}>
-        <img className="cover-img" src="/cover.jpg" alt="I Speak in Tongues — book cover" />
+        <img className="cover-img" src="/cover.jpg" alt="I Speak in Tongues book cover" />
         <motion.div className="cover-gloss" style={{ backgroundImage: gloss }} />
       </motion.a>
     </motion.div>
@@ -279,7 +279,7 @@ function Download() {
           <Reveal className="kicker" style={{ textAlign: 'inherit' }}>Read It Free</Reveal>
           <SplitH2 text="GET THE" accent="BOOK" className="left" />
           <Reveal className="lede" delay={2}>
-            The complete investigation — free to download, free to share. Bring every experience,
+            The complete investigation, free to download and free to share. Bring every experience,
             however powerful, to the bar of Scripture.
           </Reveal>
           <Reveal className="stats" delay={3}>
@@ -292,7 +292,7 @@ function Download() {
             <Magnetic><a className="btn primary" href={PDF} download>Download Free PDF</a></Magnetic>
             <p className="dl-note">PDF · 0.8 MB · formatted for reading and print · share it freely</p>
             <p className="dl-note"><a className="dl-alt" href="/downloads/I_Speak_In_Tongues_Audio_Edition.pdf" download>
-              Audio edition (PDF) — formatted for text-to-speech and dictation apps</a></p>
+              Audio edition (PDF), formatted for text-to-speech and dictation apps</a></p>
           </Reveal>
         </div>
       </div>
@@ -309,9 +309,9 @@ function Author() {
         <Reveal className="role" delay={2}>SP7 Studios</Reveal>
         <Reveal delay={3}>
           <p>
-            Shadai Perez is a filmmaker and writer at SP7 Studios, an award-winning production studio.
+            Shadai Perez is a filmmaker and writer at SP7 Studios.
             This investigation grew out of years of study and firsthand experience with the questions it
-            examines — and out of the conviction that sincerity deserves the truth: test all things,
+            examines, and out of the conviction that sincerity deserves the truth: test all things,
             and hold fast what is good.
           </p>
         </Reveal>
@@ -358,7 +358,7 @@ export default function App() {
       <Evidence />
       {desktop
         ? <HTimeline items={TIMELINE} kicker="Twenty Centuries" title="FROM PENTECOST" accent="TO TOPEKA"
-            lede="Eighteen largely silent centuries — then something new. Scroll on." />
+            lede="Eighteen largely silent centuries, then something new. Scroll on." />
         : <VTimeline />}
       <Checklist />
       <Experience />
