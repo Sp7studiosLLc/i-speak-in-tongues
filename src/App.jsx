@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion'
-import { useLenis, Preloader, Cursor, Magnetic, Grain, ScrollProgress, SplitH2, CountUp, Strike, fine } from './fx.jsx'
+import { useLenis, Preloader, Cursor, Magnetic, Grain, ScrollProgress, SplitH2, CountUp, fine } from './fx.jsx'
 import { BabelScene, HTimeline, Checklist, Claims, FlipCards, Experience, Resources } from './scenes.jsx'
 
 const PDF = '/downloads/I_Speak_In_Tongues.pdf'
@@ -74,7 +74,7 @@ function Hero({ ready }) {
       <motion.div style={{ y: yTitle, opacity: fade }} initial="hidden" animate={ready ? 'show' : 'hidden'}>
         <motion.h1 className="display title" variants={seq(0.05, 40)}>
           I SPEAK<br />
-          <span style={{ whiteSpace: 'nowrap' }}>IN <span className="line2">TONGUES<Strike uid="hero" delay={0.95} /></span></span>
+          <span style={{ whiteSpace: 'nowrap' }}>IN TONGUES</span>
         </motion.h1>
 
         <motion.div className="divider" variants={{ hidden: { opacity: 0, scaleX: 0 }, show: { opacity: 1, scaleX: 1, transition: { duration: 0.8, delay: 1.5 } } }}>
@@ -82,11 +82,7 @@ function Hero({ ready }) {
         </motion.div>
 
         <motion.p className="serif subtitle" variants={seq(1.65)}>
-          The Lie That Changed<br />Modern Christianity
-        </motion.p>
-
-        <motion.p className="tagline" variants={seq(2.0, 0)}>
-          A Biblical and Historical Investigation
+          A Biblical and<br />Historical Investigation
         </motion.p>
 
         <motion.div className="ctas" variants={seq(2.2, 20)}>
@@ -129,7 +125,7 @@ const EVIDENCE = [
   { t: 'Publicly Verified', p: 'Pentecost was falsifiable: native speakers of at least a dozen languages confirmed in real time what was being said. Biblical tongues invited verification, and passed.', vf: '“We hear them… the wonderful works of God”' },
   { t: 'The Rules of Order', p: 'Two or three at most. One at a time. Always interpreted. Silent without an interpreter. Under the speaker’s full control. Paul’s regulations read like a checklist, and it is worth asking honestly how much of today’s practice fits it.', vf: '1 Corinthians 14:27–33, 40' },
   { t: 'A Sign for Unbelievers', p: 'Paul defines the purpose from Isaiah: tongues are a sign aimed at unbelievers, exactly as at Pentecost. A private devotional practice structurally cannot do the one thing the gift is for.', vf: 'Isaiah 28:11 · 1 Corinthians 14:21–22' },
-  { t: 'Born in 1901', p: 'The modern practice has a birthday and an address: January 1, 1901, Topeka, Kansas. It was first taught as missionary languages; when that did not hold up on the mission field, it was re-described as a “heavenly language.”', vf: 'Documented in chapters 11–12' },
+  { t: 'At Every Frontier', p: 'Tongues appears in only three narratives in Acts: Jerusalem, Caesarea, and Ephesus. Each one marks the gospel crossing into a new people, and each time the hearers understood what was said. Three frontier crossings, one consistent gift.', vf: 'Acts 2 · Acts 10 · Acts 19' },
 ]
 
 function Evidence() {
@@ -144,8 +140,7 @@ function Evidence() {
         <SplitH2 text="SIX PILLARS OF" accent="THE BIBLICAL GIFT" />
         <Reveal className="lede" delay={2}>
           Walked in order (Babel, Pentecost, Caesarea, Ephesus, Corinth), the evidence yields one
-          consistent portrait, and it differs, point by point, from what most people today understand
-          tongues to be.
+          consistent portrait of the gift.
         </Reveal>
         <div className="cards">
           {EVIDENCE.map((c, i) => (
@@ -216,7 +211,7 @@ const CHAPTERS = [
   'The Biblical Portrait: What the Evidence Yields', 'Tongues in Church History', 'What Linguistics Found',
   'Ecstatic Experience: Eastern Practice and Modern Revivalism', 'Other Commonly Cited Passages',
   'The Private Prayer Language Examined', 'Answering the Arguments: What People Say in Religious Circles',
-  'The Strategy of the Counterfeit', 'Testing the Spirits: A Biblical Framework', 'Conclusion',
+  'A Pattern as Old as Eden', 'Testing the Spirits: A Biblical Framework', 'Conclusion',
 ]
 
 function Chapters() {
@@ -342,7 +337,7 @@ export default function App() {
       <Grain />
       <ScrollProgress />
       <motion.nav className="nav" initial={{ y: -70 }} animate={ready ? { y: 0 } : {}} transition={{ duration: 0.6, delay: 0.1 }}>
-        <a className="mark display" href="#top">I SPEAK IN <s>TONGUES</s></a>
+        <a className="mark display" href="#top">I SPEAK IN TONGUES</a>
         <div className="links">
           <a href="#evidence">The Evidence</a>
           <a href="#history">History</a>
