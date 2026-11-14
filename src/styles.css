@@ -391,3 +391,8 @@ footer .heb { margin-top: 18px; color: rgba(178, 138, 78, 0.3); font-size: 15px;
 
 .dl-alt { color: var(--gold); text-decoration: none; border-bottom: 1px dotted var(--gold-dim); }
 .dl-alt:hover { color: var(--cream); }
+
+/* full-res texture: landscape crop of the 4K master for wide screens */
+@media (min-width: 900px) {
+  .hero, .download-sec { background-image: url('/texture-wide.jpg'); }
+}

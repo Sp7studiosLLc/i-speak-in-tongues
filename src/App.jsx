@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion'
-import { useLenis, Preloader, Cursor, Magnetic, Grain, ScrollProgress, SplitH2, CountUp, fine } from './fx.jsx'
+import { useLenis, Preloader, Magnetic, Grain, ScrollProgress, SplitH2, CountUp, fine } from './fx.jsx'
 import { BabelScene, HTimeline, Checklist, Claims, FlipCards, Experience, Resources } from './scenes.jsx'
 
 const PDF = '/downloads/I_Speak_In_Tongues.pdf'
@@ -209,8 +209,8 @@ const CHAPTERS = [
   'Corinth: The City and the Problem Church', 'One Spirit, Many Gifts (1 Corinthians 12)',
   'Love Above Every Gift (1 Corinthians 13)', 'Intelligibility and Order (1 Corinthians 14)',
   'The Biblical Portrait: What the Evidence Yields', 'Tongues in Church History', 'What Linguistics Found',
-  'Ecstatic Experience: Eastern Practice and Modern Revivalism', 'Other Commonly Cited Passages',
-  'The Private Prayer Language Examined', 'Answering the Arguments: What People Say in Religious Circles',
+  'Ecstatic Experience: A Wider Look', 'Other Commonly Cited Passages',
+  'The Private Prayer Language', 'Answering the Arguments: What People Say in Religious Circles',
   'A Pattern as Old as Eden', 'Testing the Spirits: A Biblical Framework', 'Conclusion',
 ]
 
@@ -333,7 +333,6 @@ export default function App() {
   return (
     <>
       <Preloader onDone={() => setReady(true)} />
-      <Cursor />
       <Grain />
       <ScrollProgress />
       <motion.nav className="nav" initial={{ y: -70 }} animate={ready ? { y: 0 } : {}} transition={{ duration: 0.6, delay: 0.1 }}>

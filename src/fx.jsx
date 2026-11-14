@@ -130,11 +130,11 @@ export function Cursor() {
 }
 
 /* ---------- magnetic wrapper ---------- */
-export function Magnetic({ children, strength = 0.35, className = '' }) {
+export function Magnetic({ children, strength = 0.18, className = '' }) {
   const ref = useRef(null)
   const x = useMotionValue(0), y = useMotionValue(0)
-  const sx = useSpring(x, { stiffness: 220, damping: 16 })
-  const sy = useSpring(y, { stiffness: 220, damping: 16 })
+  const sx = useSpring(x, { stiffness: 260, damping: 30 })
+  const sy = useSpring(y, { stiffness: 260, damping: 30 })
   const onMove = e => {
     if (!fine() || !ref.current) return
     const r = ref.current.getBoundingClientRect()
