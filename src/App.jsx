@@ -72,9 +72,9 @@ function Hero({ ready }) {
       </motion.div>
 
       <motion.div style={{ y: yTitle, opacity: fade }} initial="hidden" animate={ready ? 'show' : 'hidden'}>
-        <motion.h1 className="display title" variants={seq(0.05, 40)}>
-          I SPEAK<br />
-          <span style={{ whiteSpace: 'nowrap' }}>IN TONGUES</span>
+        <motion.h1 className="title" variants={seq(0.05, 40)}>
+          <span className="title-sm">I SPEAK IN</span>
+          <span className="title-lg">TONGUES</span>
         </motion.h1>
 
         <motion.div className="divider" variants={{ hidden: { opacity: 0, scaleX: 0 }, show: { opacity: 1, scaleX: 1, transition: { duration: 0.8, delay: 1.5 } } }}>

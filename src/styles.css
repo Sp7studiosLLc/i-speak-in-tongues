@@ -396,3 +396,20 @@ footer .heb { margin-top: 18px; color: rgba(178, 138, 78, 0.3); font-size: 15px;
 @media (min-width: 900px) {
   .hero, .download-sec { background-image: url('/texture-wide.jpg'); }
 }
+
+/* hero title: engraved capitals, TONGUES in gold */
+.hero .title { font-family: 'Cinzel', serif; font-size: inherit; line-height: 1; text-shadow: none; }
+.hero .title-sm {
+  display: block; font-weight: 500; color: var(--cream);
+  font-size: clamp(17px, 3.05vw, 44px); letter-spacing: 0.42em; text-indent: 0.42em;
+  text-shadow: 0 4px 22px rgba(0, 0, 0, 0.8);
+}
+.hero .title-lg {
+  display: block; font-weight: 700; margin-top: 0.12em;
+  font-size: clamp(54px, 11vw, 160px); line-height: 1.05; letter-spacing: 0.06em; text-indent: 0.06em;
+  background: linear-gradient(180deg, #f3dfa6 0%, #d4ad63 45%, #9c7a3c 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 6px 22px rgba(0, 0, 0, 0.7));
+}
+.pre-title { font-family: 'Cinzel', serif; font-weight: 500; letter-spacing: 0.2em; }
+.pre-title .pre-lg { font-weight: 700; color: var(--gold); }

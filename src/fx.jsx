@@ -86,7 +86,7 @@ export function Preloader({ onDone }) {
             <motion.div className="pre-title display" initial="hidden" animate="show"
               variants={{ hidden: {}, show: {} }}>
               <motion.div variants={{ hidden: { opacity: 0, y: 26 }, show: { opacity: 1, y: 0, transition: { duration: 0.4 } } }}>
-                I SPEAK IN TONGUES
+                <span className="pre-sm">I SPEAK IN</span> <span className="pre-lg">TONGUES</span>
               </motion.div>
             </motion.div>
           )}
